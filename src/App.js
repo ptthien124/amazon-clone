@@ -34,9 +34,9 @@ function App() {
       <div className="header__block" style={{ height: "99px" }}></div>
 
       <Routes>
-        <Route path="/" element={<MainPage />} />
-        <Route path="/checkOut" element={<CheckOutPage />} />
-        <Route path="/products/:id" element={<ProductPage />} />
+        <Route path="/amazon-clone" element={<MainPage />} />
+        <Route path="/amazon-clone/checkOut" element={<CheckOutPage />} />
+        <Route path="/amazon-clone/products/:id" element={<ProductPage />} />
       </Routes>
 
       <Footer />

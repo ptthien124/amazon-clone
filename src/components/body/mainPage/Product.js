@@ -44,7 +44,7 @@ function Product({ id, title, category, description, price, image }) {
 
   return (
     <div className="col wl-3 l-4 m-6 c-12">
-      <Link to={`/products/${productLink}`} className="product flex-col-center">
+      <Link to={`/amazon-clone/products/${productLink}`} className="product flex-col-center">
         <img className="product__img" src={image} alt="" />
         <div className="product__info flex-col">
           <h3 className="product__title">{title}</h3>

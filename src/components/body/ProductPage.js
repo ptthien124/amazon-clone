@@ -1,10 +1,9 @@
-import React, { useMemo, useCallback, useEffect } from "react";
-import { useDispatch } from "react-redux";
-import { useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
-import "../../styles/ProductPage.scss";
+import React, { useCallback, useEffect, useMemo } from "react";
 import { FaStar } from "react-icons/fa";
+import { useDispatch, useSelector } from "react-redux";
+import { useParams } from "react-router-dom";
 import { addToCart } from "../../features/cartSlice";
+import "../../styles/ProductPage.scss";
 
 function ProductPage() {
   useEffect(() => {

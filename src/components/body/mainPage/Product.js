@@ -1,9 +1,9 @@
-import React, { useMemo, memo, useCallback } from "react";
-import { Link } from "react-router-dom";
-import "../../../styles/Product.scss";
-import { useDispatch, useSelector } from "react-redux";
+import React, { memo, useCallback, useMemo } from "react";
 import { FaStar } from "react-icons/fa";
+import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 import { addToCart } from "../../../features/cartSlice";
+import "../../../styles/Product.scss";
 
 function Product({ id, title, category, description, price, image }) {
   const dispatch = useDispatch();
@@ -20,6 +20,7 @@ function Product({ id, title, category, description, price, image }) {
     link = link.replace(/  /g, " ");
     link = link.replace(/ /g, "-");
     link = link.toString() + "::id:" + id.toString();
+
     return link;
   }, []);
 
@@ -44,7 +45,10 @@ function Product({ id, title, category, description, price, image }) {
 
   return (
     <div className="col wl-3 l-4 m-6 c-12">
-      <Link to={`/amazon-clone/products/${productLink}`} className="product flex-col-center">
+      <Link
+        to={`/amazon-clone/products/${productLink}`}
+        className="product flex-col-center"
+      >
         <img className="product__img" src={image} alt="" />
         <div className="product__info flex-col">
           <h3 className="product__title">{title}</h3>

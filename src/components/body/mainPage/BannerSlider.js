@@ -1,17 +1,17 @@
 import React from "react";
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import "../../../styles/BannerSlider.scss";
+import "slick-carousel/slick/slick.css";
 import {
   image1,
   image2,
   image3,
   image4,
   image5,
-  image6,
+  image6
 } from "../../../app/sliderImages";
-import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import "../../../styles/BannerSlider.scss";
 
 function BannerSlider() {
   let settings = {

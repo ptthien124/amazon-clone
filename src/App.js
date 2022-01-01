@@ -1,33 +1,13 @@
-import { useEffect } from "react";
-import { Routes, Route } from "react-router-dom";
-import "./gridsystem.css";
+import { Route, Routes } from "react-router-dom";
 import "./App.css";
-import productsApi from "./api/productsApi";
-import { useDispatch } from "react-redux";
-import { addAllToStore } from "./features/storeSlice";
-import Header from "./components/Header";
-import MainPage from "./components/body/mainPage/MainPage";
 import CheckOutPage from "./components/body/checkOut/CheckOutPage";
-import Footer from "./components/Footer";
+import MainPage from "./components/body/mainPage/MainPage";
 import ProductPage from "./components/body/ProductPage";
+import Footer from "./components/Footer";
+import Header from "./components/Header";
+import "./gridsystem.css";
 
 function App() {
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    const fetchProductList = async () => {
-      try {
-        const response = await productsApi.getAll();
-        console.log("Fetch products successfully!");
-        dispatch(addAllToStore(response));
-      } catch (error) {
-        console.log("Failed to fetch product list: ", error);
-      }
-    };
-
-    fetchProductList();
-  }, []);
-
   return (
     <div className="app">
       <Header />

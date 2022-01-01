@@ -1,14 +1,14 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import "../styles/Header.scss";
 import {
+  FaBars,
   FaMapMarkerAlt,
-  FaSortDown,
   FaSearch,
   FaShoppingCart,
-  FaBars,
+  FaSortDown
 } from "react-icons/fa";
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
+import "../styles/Header.scss";
 
 function Header() {
   const cartList = useSelector((state) => state.cartList);
@@ -63,7 +63,10 @@ function Header() {
                 <strong>& Order</strong>
               </div>
             </Link>
-            <Link to="/amazon-clone/checkOut" className="header__link flex-center">
+            <Link
+              to="/amazon-clone/checkOut"
+              className="header__link flex-center"
+            >
               <FaShoppingCart />
               <strong>Cart</strong>
               <span className="flex-center">{cartList.length}</span>

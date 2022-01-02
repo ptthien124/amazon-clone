@@ -10,7 +10,7 @@ function Footer() {
       </a>
       <div className="grid wide">
         <div className="row">
-          <div className="col wl-3">
+          <div className="col wl-3 l-3 m-6 c-6">
             <div className="flex-col">
               <h3>Geto Know Us</h3>
               <Link className="footer__link" to="/">
@@ -31,7 +31,7 @@ function Footer() {
             </div>
           </div>
 
-          <div className="col wl-3">
+          <div className="col wl-3 l-3 m-6 c-6">
             <div className="flex-col">
               <h3>Make Money with Us</h3>
               <Link className="footer__link" to="/">
@@ -61,7 +61,7 @@ function Footer() {
             </div>
           </div>
 
-          <div className="col wl-3">
+          <div className="col wl-3 l-3 m-6 c-6">
             <div className="flex-col">
               <h3>Geto Know Us</h3>
               <Link className="footer__link" to="/">
@@ -79,7 +79,7 @@ function Footer() {
             </div>
           </div>
 
-          <div className="col wl-3">
+          <div className="col wl-3 l-3 m-6 c-6">
             <div className="flex-col">
               <h3>Geto Know Us</h3>
               <Link className="footer__link" to="/">

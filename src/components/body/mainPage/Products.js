@@ -1,28 +1,10 @@
-import React, { memo, useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import productsApi from "../../../api/productsApi";
-import { addAllToStore } from "../../../features/storeSlice";
+import React, { memo } from "react";
+import { useSelector } from "react-redux";
 import Product from "./Product";
 import SkeletonProduct from "./SkeletonProduct";
 
 function Products() {
-  const dispatch = useDispatch();
-
   const storeList = useSelector((state) => state.storeList);
-
-  useEffect(() => {
-    const fetchProductList = async () => {
-      try {
-        const response = await productsApi.getAll();
-        console.log("Fetch products successfully!");
-        dispatch(addAllToStore(response));
-      } catch (error) {
-        console.log("Failed to fetch product list: ", error);
-      }
-    };
-
-    fetchProductList();
-  }, []);
 
   return (
     <div className="grid wide">

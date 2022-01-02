@@ -23,3 +23,13 @@
   display: flex;
   flex-direction: column;
 }
+
+.header__block {
+  height: 99px;
+}
+
+@media (max-width: 940px) {
+  .header__block {
+    height: 60px;
+  }
+}

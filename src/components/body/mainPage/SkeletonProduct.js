@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import "../../../styles/Product.scss";
 
 function SkeletonProduct() {
@@ -12,4 +12,4 @@ function SkeletonProduct() {
   );
 }
 
-export default SkeletonProduct;
+export default memo(SkeletonProduct);

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { memo, useEffect } from "react";
 import BannerSlider from "./BannerSlider";
 import Products from "./Products";
 
@@ -15,4 +15,4 @@ function MainPage() {
   );
 }
 
-export default MainPage;
+export default memo(MainPage);

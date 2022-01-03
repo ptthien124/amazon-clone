@@ -3,14 +3,7 @@ import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
-import {
-  image1,
-  image2,
-  image3,
-  image4,
-  image5,
-  image6
-} from "../../../app/sliderImages";
+import sliderImages from "../../../app/sliderImages";
 import "../../../styles/BannerSlider.scss";
 
 function BannerSlider() {
@@ -26,16 +19,14 @@ function BannerSlider() {
     pauseOnHover: false,
   };
 
+
   return (
     <div className="bannerSlider">
       <FaChevronLeft className="bannerSlider__customArrow" />
       <Slider className="slider" {...settings}>
-        <img src={image1} alt="" />
-        <img src={image2} alt="" />
-        <img src={image3} alt="" />
-        <img src={image4} alt="" />
-        <img src={image5} alt="" />
-        <img src={image6} alt="" />
+        {sliderImages.map((image, i) => (
+          <img src={image} key={i} alt="" />
+        ))}
       </Slider>
 
       <FaChevronRight className="bannerSlider__customArrow" />

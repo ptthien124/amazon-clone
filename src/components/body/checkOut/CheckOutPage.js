@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useCallback, useEffect, useMemo, useState } from "react";
 import { useSelector } from "react-redux";
 import "../../../styles/CheckOutPage.scss";
 import CheckOutPageEmpty from "./CheckOutPageEmpty";
@@ -17,8 +17,10 @@ function CheckOutPage() {
     []
   );
 
-  const [total] = useState(
-    cartList.reduce((total, productPrice) => total + productPrice.price, 0)
+  const total = useMemo(
+    () =>
+      cartList.reduce((total, productPrice) => total + productPrice.price, 0),
+    [cartList]
   );
 
   return (

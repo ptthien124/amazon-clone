@@ -29,7 +29,7 @@ function Header() {
   };
 
   const handleTurnOffMobileMenu = (e) => {
-    e.preventDefault();
+    e.stopPropagation();
 
     document
       .querySelector(".header__mobile")

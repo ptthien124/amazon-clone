@@ -21,7 +21,7 @@ function App() {
         console.log("Fetch products successfully!");
         dispatch(addAllToStore(response));
       } catch (error) {
-        console.log("Failed to fetch product list: ", error);
+        console.log("Failed to fetch product list, error: ", error);
       }
     };
 

@@ -28,7 +28,7 @@ function ProductPage() {
     id = id.replace("::id:", "");
 
     return id;
-  });
+  }, []);
 
   const productInfo = useMemo(() => {
     const productInfo = storeList.find(
@@ -36,11 +36,14 @@ function ProductPage() {
     );
 
     return productInfo;
-  });
+  }, []);
 
-  const { id, title, category, description, price, image } = useMemo(() => ({
-    ...productInfo,
-  }));
+  const { id, title, category, description, price, image } = useMemo(
+    () => ({
+      ...productInfo,
+    }),
+    []
+  );
 
   const handleAddToBasketClick = useCallback(
     (e) => {

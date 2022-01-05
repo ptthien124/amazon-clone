@@ -19,7 +19,6 @@ function BannerSlider() {
     pauseOnHover: false,
   };
 
-
   return (
     <div className="bannerSlider">
       <FaChevronLeft className="bannerSlider__customArrow" />

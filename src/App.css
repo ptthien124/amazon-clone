@@ -33,3 +33,22 @@
     height: 60px;
   }
 }
+
+::-webkit-scrollbar {
+  width: 1rem;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 5px;
+  margin-block: 99px 410px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(44, 55, 68, 0.411);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #232f3ea9;
+}

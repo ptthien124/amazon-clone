@@ -19,5 +19,14 @@
 
 .header__recommended span:last-child {
   font-weight: 700;
+  line-height: 36px;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  height: 100%;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
 }
 /*# sourceMappingURL=HeaderRecommended.css.map */

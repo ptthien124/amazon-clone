@@ -90,8 +90,8 @@ function Header() {
     document.querySelector(".header__input").addEventListener("keyup", (e) => {
       if (e.key === "Enter") {
         const searchBtn = document.querySelector(".header__searchBtn");
-        handleInputFocus();
-        input.blur();
+        document.querySelector(".header__search")?.classList.remove("focus");
+        document.querySelector(".header__input").blur();
         searchBtn.click();
       }
     });

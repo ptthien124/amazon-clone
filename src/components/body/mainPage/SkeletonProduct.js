@@ -1,5 +1,5 @@
-import React, { memo } from "react";
-import "../../../styles/Product.scss";
+import React from "react";
+import "../../../styles/Product.css";
 
 function SkeletonProduct() {
   return (
@@ -12,4 +12,4 @@ function SkeletonProduct() {
   );
 }
 
-export default memo(SkeletonProduct);
+export default SkeletonProduct;

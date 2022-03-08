@@ -3,9 +3,11 @@ import { FaStar } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { addToCart } from "../../../features/cartSlice";
-import "../../../styles/Product.scss";
+import "../../../styles/Product.css";
 
 function Product({ id, title, category, description, price, image }) {
+  
+
   const dispatch = useDispatch();
 
   const cartId = useSelector((state) => state.cartList.length);

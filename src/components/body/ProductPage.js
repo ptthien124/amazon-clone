@@ -3,7 +3,7 @@ import { FaStar } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { addToCart } from "../../features/cartSlice";
-import "../../styles/ProductPage.scss";
+import "../../styles/ProductPage.css";
 
 function ProductPage() {
   useEffect(() => {
@@ -28,7 +28,7 @@ function ProductPage() {
     id = id.replace("::id:", "");
 
     return id;
-  }, []);
+  }, [params.id]);
 
   const productInfo = useMemo(() => {
     const productInfo = storeList.find(
@@ -36,13 +36,13 @@ function ProductPage() {
     );
 
     return productInfo;
-  }, []);
+  }, [params.id]);
 
   const { id, title, category, description, price, image } = useMemo(
     () => ({
       ...productInfo,
     }),
-    []
+    [params.id]
   );
 
   const handleAddToBasketClick = useCallback(

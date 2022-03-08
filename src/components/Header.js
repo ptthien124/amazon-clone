@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import {
   FaBars,
   FaMapMarkerAlt,
@@ -8,11 +8,13 @@ import {
   FaTimes,
 } from "react-icons/fa";
 import { useSelector } from "react-redux";
-import { Link } from "react-router-dom";
-import "../styles/Header.scss";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import "../styles/Header.css";
+import HeaderRecommended from "./HeaderRecommended";
 
 function Header() {
   const cartList = useSelector((state) => state.cartList);
+  const storeList = useSelector((state) => state.storeList);
 
   const handleMobileMenuClick = () => {
     document
@@ -44,6 +46,63 @@ function Header() {
       .classList.remove("header__mobileOverlayer--active");
   };
 
+  const input = document.querySelector(".header__input");
+  const search = document.querySelector(".header__search");
+
+  const handleInputFocus = () => {
+    if (input === document.activeElement && input.value.trim().length > 0) {
+      search?.classList.add("focus");
+    } else search?.classList.remove("focus");
+  };
+
+  document.addEventListener("mouseup", handleInputFocus, { passive: true });
+
+  const [inputValue, setInputValue] = useState("");
+  const [searchList, setSearchList] = useState([]);
+
+  const handleInputValueChanged = useCallback(
+    (e) => {
+      setInputValue(e.target.value);
+      setSearchList([]);
+      handleInputFocus();
+      if (e.target.value !== "") {
+        const value = e.target.value.trim().toLowerCase();
+        storeList.forEach((product) => {
+          const title = product.title.toLowerCase();
+          const index = title.indexOf(value);
+          if (index === 0) setSearchList((prev) => [...prev, product]);
+        });
+      }
+    },
+    [inputValue]
+  );
+
+  const navigate = useNavigate();
+
+  const handleSearchEnter = useCallback(() => {
+    if (inputValue !== "") {
+      const link = `/amazon-clone/search/${inputValue}`;
+      navigate(link);
+    }
+  }, [inputValue]);
+
+  useEffect(() => {
+    document.querySelector(".header__input").addEventListener("keyup", (e) => {
+      if (e.key === "Enter") {
+        const searchBtn = document.querySelector(".header__searchBtn");
+        handleInputFocus();
+        input.blur();
+        searchBtn.click();
+      }
+    });
+  }, []);
+
+  const location = useLocation();
+
+  useEffect(() => {
+    setInputValue("");
+  }, [location]);
+
   return (
     <div className="grid">
       <div className="header">
@@ -73,8 +132,29 @@ function Header() {
               All
               <FaSortDown />
             </div>
-            <input />
-            <button className="flex-center">
+            <div className="header__topInput">
+              <input
+                className="header__input"
+                value={inputValue}
+                onChange={handleInputValueChanged}
+              />
+              <div className="header__overlayer"></div>
+              <div className="header__search">
+                {searchList.length > 0 &&
+                  searchList.map((product, i) => (
+                    <HeaderRecommended
+                      id={product.id}
+                      key={product.id}
+                      title={product.title}
+                      value={inputValue.trim()}
+                    />
+                  ))}
+              </div>
+            </div>
+            <button
+              className="flex-center header__searchBtn"
+              onClick={handleSearchEnter}
+            >
               <FaSearch />
             </button>
           </div>

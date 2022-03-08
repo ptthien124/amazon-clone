@@ -4,7 +4,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
 import sliderImages from "../../../app/sliderImages";
-import "../../../styles/BannerSlider.scss";
+import "../../../styles/BannerSlider.css";
 
 function BannerSlider() {
   let settings = {

@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,oBAAoB,CAAC;EACnB,eAAe,EAAE,IAAI;EACrB,KAAK,EAAE,IAAI;EACX,SAAS,EAAE,MAAM;EAEjB,MAAM,EAAE,IAAI;EACZ,OAAO,EAAE,MAAM;EACf,cAAc,EAAE,GAAG;EAEnB,OAAO,EAAE,IAAI;EACb,WAAW,EAAE,MAAM;CASpB;;AAnBD,AAYE,oBAZkB,AAYjB,MAAM,CAAC;EACN,gBAAgB,EAAE,SAAS;CAC5B;;AAdH,AAgBE,oBAhBkB,CAgBlB,IAAI,AAAA,WAAW,CAAA;EACb,WAAW,EAAE,GAAG;CACjB",
+    "sources": [
+        "HeaderRecommended.scss"
+    ],
+    "names": [],
+    "file": "HeaderRecommended.css"
+}

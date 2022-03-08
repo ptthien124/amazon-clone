@@ -1,0 +1,103 @@
+.checkOutProduct {
+  color: #333;
+  background-color: white;
+  padding: 20px 0;
+  border-bottom: 1px solid lightgray;
+}
+
+.checkOutProduct > img {
+  -o-object-fit: contain;
+     object-fit: contain;
+  min-width: 180px;
+  min-height: 180px;
+  max-width: 180px;
+  max-height: 180px;
+  margin-right: 10px;
+}
+
+.checkOutProduct__info {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.checkOutProduct__info * {
+  margin-bottom: 4px;
+}
+
+.checkOutProduct__info > h3 {
+  font-size: 2.2rem;
+  line-height: 2.4rem;
+  height: 4.8rem;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+.checkOutProduct__info > span {
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.checkOutProduct__info > p {
+  font-size: 1.3rem;
+  line-height: 1.5rem;
+  height: 3rem;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+.checkOutProduct__info .checkOutProduct__rating {
+  color: #febd69;
+  font-size: 1.4rem;
+}
+
+.checkOutProduct__withPrice {
+  min-width: 200px;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-left: auto;
+}
+
+.checkOutProduct__withPrice > span {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.checkOutProduct__withPrice > div {
+  width: 100%;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.checkOutProduct__withPrice > div > button {
+  height: 30px;
+  margin: 4px 0;
+  width: 80%;
+  border: none;
+  border-radius: 4px;
+  font-size: 1.4rem;
+  font-weight: 600;
+  background: -webkit-gradient(linear, left top, left bottom, from(#ffd715), to(#febd69));
+  background: linear-gradient(#ffd715, #febd69);
+}
+
+.checkOutProduct__withPrice > div > button:hover {
+  cursor: pointer;
+  -webkit-filter: brightness(105%);
+          filter: brightness(105%);
+}
+
+.checkOutProduct__withPrice > div > button:active {
+  -webkit-filter: brightness(95%);
+          filter: brightness(95%);
+}
+/*# sourceMappingURL=CheckOutProduct.css.map */

@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "../../../styles/CheckOutPageEmpty.scss";
+import "../../../styles/CheckOutPageEmpty.css";
 
 function CheckOutPageEmpty() {
   return (

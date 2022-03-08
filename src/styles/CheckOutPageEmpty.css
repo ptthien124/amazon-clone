@@ -1,0 +1,64 @@
+.checkOutPageEmpty {
+  margin-top: 12px;
+  border-radius: 2px;
+  background-color: white;
+  padding: 20px;
+  padding-top: 52px;
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+}
+
+.checkOutPageEmpty > img {
+  min-width: 200px;
+  width: 33.333%;
+  margin-right: 20px;
+}
+
+.checkOutPageEmpty h2 {
+  font-size: 3rem;
+}
+
+.checkOutPageEmpty__link {
+  text-decoration: none;
+  color: #007185;
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+
+.checkOutPageEmpty__link:hover {
+  text-decoration: underline;
+  color: red;
+}
+
+.checkOutPageEmpty__btn {
+  height: 30px;
+  padding: 0 16px;
+  margin-right: 12px;
+  -webkit-box-shadow: 0 1px 1px lightgray;
+          box-shadow: 0 1px 1px lightgray;
+  border: 1px solid lightgray;
+  border-radius: 10px;
+  background-color: white;
+  font-size: 1.6rem;
+  margin-top: 20px;
+}
+
+.checkOutPageEmpty__btn:hover {
+  -webkit-filter: brightness(98%);
+          filter: brightness(98%);
+  cursor: pointer;
+}
+
+.checkOutPageEmpty__btn:active {
+  -webkit-filter: brightness(100%);
+          filter: brightness(100%);
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.checkOutPageEmpty__btn:first-child {
+  background-color: #ffd814;
+  border-color: transparent;
+}
+/*# sourceMappingURL=CheckOutPageEmpty.css.map */

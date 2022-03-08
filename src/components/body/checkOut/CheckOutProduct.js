@@ -2,7 +2,7 @@ import React, { memo, useCallback } from "react";
 import { FaStar } from "react-icons/fa";
 import { useDispatch } from "react-redux";
 import { removeFromCart } from "../../../features/cartSlice";
-import "../../../styles/CheckOutProduct.scss";
+import "../../../styles/CheckOutProduct.css";
 
 function CheckOutProduct({
   id,

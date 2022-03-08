@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useMemo } from "react";
 import { useSelector } from "react-redux";
-import "../../../styles/CheckOutPage.scss";
+import "../../../styles/CheckOutPage.css";
 import CheckOutPageEmpty from "./CheckOutPageEmpty";
 import CheckOutPageFill from "./CheckOutPageFill";
 

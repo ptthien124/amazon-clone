@@ -1,4 +1,4 @@
-import React, { memo, useCallback, useMemo } from "react";
+import React, { memo, useCallback, useEffect, useMemo } from "react";
 import { FaStar } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
@@ -6,15 +6,13 @@ import { addToCart } from "../../../features/cartSlice";
 import "../../../styles/Product.css";
 
 function Product({ id, title, category, description, price, image }) {
-  
-
   const dispatch = useDispatch();
-
-  const cartId = useSelector((state) => state.cartList.length);
 
   const rating = useMemo(() => Math.floor(Math.random() * 5) + 1, []);
 
   const hasPrime = useMemo(() => Math.random() < 0.5, []);
+
+  const cartList = useSelector((state) => state.cartList);
 
   const productLink = useMemo(() => {
     let link = title.trim();
@@ -26,24 +24,28 @@ function Product({ id, title, category, description, price, image }) {
     return link;
   }, []);
 
-  const handleAddToBasketClick = useCallback(
-    (e) => {
-      e.preventDefault();
-      const productInfo = {
-        id,
-        cartId,
-        title,
-        category,
-        description,
-        price,
-        image,
-        rating,
-        hasPrime,
-      };
-      dispatch(addToCart(productInfo));
-    },
-    [cartId]
-  );
+  const handleAddToBasketClick = (e) => {
+    e.preventDefault();
+    let cartId = 0;
+    for (let i = 0; i < cartList.length + 1; i++) {
+      if (cartId === cartList[i]?.cartId) {
+        cartId++;
+        i = -1;
+      }
+    }
+    const productInfo = {
+      id,
+      cartId,
+      title,
+      category,
+      description,
+      price,
+      image,
+      rating,
+      hasPrime,
+    };
+    dispatch(addToCart(productInfo));
+  };
 
   return (
     <div className="col wl-3 l-4 m-6 c-12">
@@ -76,4 +78,4 @@ function Product({ id, title, category, description, price, image }) {
   );
 }
 
-export default memo(Product);
+export default Product;
